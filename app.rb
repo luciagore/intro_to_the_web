@@ -9,7 +9,12 @@ end
 get '/hello' do
   'saying hello'
 end
-get '/cat' do
+get '/random-cat' do
   @name = ["Lucy", "Laura"].sample
+  erb(:index)
+end
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
